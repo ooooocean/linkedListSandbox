@@ -96,6 +96,37 @@ class LinkedList:
             current = current.next
         return None
 
+    def bubble_sort(self, head):
+        # initialise pair of elements for comparison
+        current = head
+        subsq = Node(None)
+
+        if head is None:
+            # this indicates end of the sort
+            print(f'Please specify the head as the input.')
+            return
+        else:
+            # iterate through the list
+            while current is not None:
+                # assign the index to be the subsequent value
+                subsq = current.next
+
+                # for each pair of elements, iterate until the second of the pair is None
+                # this indicates the end of the list
+                while subsq is not None:
+                    if current.item > subsq.item:
+
+                        # if first element is greater, swap values but retain linking
+                        current.item, subsq.item = subsq.item, current.item
+
+                    # otherwise, move to next pair
+                    subsq = subsq.next
+                current = current.next
+
+
+
+
+
 
 if __name__ == '__main__':
     # initialise linked list with some values

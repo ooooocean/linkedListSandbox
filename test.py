@@ -62,3 +62,13 @@ def test_search(initialised_linked_list):
     assert initialised_linked_list[0].search(1) == 1
     assert initialised_linked_list[0].search(2) == 2
     assert initialised_linked_list[0].search(3) == 3
+
+def test_bubble_sort(initialised_linked_list):
+    initialised_linked_list[0].insert_start(23)
+    initialised_linked_list[0].insert_end(67)
+    initialised_linked_list[0].insert_start(4)
+    initialised_linked_list[0].insert_end(26)
+    initialised_linked_list[0].insert_end(12)
+
+    initialised_linked_list[0].bubble_sort(initialised_linked_list[0].head)
+    assert initialised_linked_list[0].traverse() == [1,2,3,4,12,23,26,67]
