@@ -42,6 +42,11 @@ class LinkedList:
         temp.next = new_node
 
     def insert(self, item, prev_node):
+        # if input node is not valid, throw error
+        if not prev_node:
+            print("Node must be in the linked list.")
+            return
+
         # create node for new item
         new_node = Node(item)
         new_node.next = prev_node.next

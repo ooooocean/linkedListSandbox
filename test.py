@@ -32,6 +32,12 @@ def test_insert(initialised_linked_list):
     initialised_linked_list[0].insert(9, initialised_linked_list[1])
     assert initialised_linked_list[0].traverse() == [1,2,9,3]
 
+    # insert after no node input
+    assert initialised_linked_list[0].insert(3, '') is None
+
+    # insert into node that is not in linked list
+    assert initialised_linked_list[0].insert(40, main.Node(67)) is None
+
 def test_delete_start(initialised_linked_list):
     initialised_linked_list[0].delete_start()
     assert initialised_linked_list[0].traverse() == [2,3]
