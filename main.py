@@ -46,6 +46,18 @@ class LinkedList:
         new_node.next = prev_node.next
         prev_node.next = new_node
 
+    def delete_start(self):
+        self.head = self.head.next
+
+    def delete_end(self):
+        # traverse to node before the end. construct a temporary node
+        temp = self.head
+        print(f'before loop, next is {temp.next.item}')
+        while temp.next.next:
+            temp = temp.next
+
+        # while loop ends once we reach second to last node.
+        temp.next = None
 
 
 if __name__ == '__main__':

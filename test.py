@@ -31,3 +31,11 @@ def test_insert_end(initialised_linked_list):
 def test_insert(initialised_linked_list):
     initialised_linked_list[0].insert(9, initialised_linked_list[1])
     assert initialised_linked_list[0].traverse() == [1,2,9,3]
+
+def test_delete_start(initialised_linked_list):
+    initialised_linked_list[0].delete_start()
+    assert initialised_linked_list[0].traverse() == [2,3]
+
+def test_delete_end(initialised_linked_list):
+    initialised_linked_list[0].delete_end()
+    assert initialised_linked_list[0].traverse() == [1,2]
