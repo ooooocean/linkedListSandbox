@@ -18,6 +18,16 @@ class LinkedList:
             temp = temp.next
         return x
 
+    def insert_start(self, item):
+        # create node for new item
+        new_node = Node(item)
+
+        # assign pointer for item
+        new_node.next = self.head
+
+        # make this new node the new head
+        self.head = new_node
+
 
 if __name__ == '__main__':
     # initialise linked list with some values

@@ -19,3 +19,7 @@ def initialised_linked_list():
 
 def test_traverse(initialised_linked_list):
     assert initialised_linked_list.traverse() == [1,2,3]
+
+def test_insert_start(initialised_linked_list):
+    initialised_linked_list.insert_start(0)
+    assert initialised_linked_list.traverse() == [0,1,2,3]
