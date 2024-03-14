@@ -67,10 +67,23 @@ class LinkedList:
 
     def delete(self, node_to_delete):
         # traverse to node
-        temp = self.head
-        while not temp.next == node_to_delete:
-            temp = temp.next
-        temp.next = temp.next.next
+        current = self.head
+        # define variable which checks next node
+        subsq = current.next
+        print(current.item)
+        while not subsq == node_to_delete:
+            # check if the node after current is the same as the one to be deleted
+            # if not, then reassign current and subsequent node
+
+            if not current.next:
+                # if we reach the final element, we break the loop
+                print(f'Node must be in linked list.')
+                return
+            current = current.next
+            subsq = subsq.next
+        # once we break the while loop, assign the initial pointer to the pointer that
+        # the deleted pointer was looking at
+        current.next = node_to_delete.next
 
     def search(self, index_to_find):
         current = self.head

@@ -47,8 +47,16 @@ def test_delete_end(initialised_linked_list):
     assert initialised_linked_list[0].traverse() == [1,2]
 
 def test_delete(initialised_linked_list):
+    # try delete with no input
+    assert initialised_linked_list[0].delete(main.Node(90)) is None
+
+    # happy path
     initialised_linked_list[0].delete(initialised_linked_list[1])
-    assert initialised_linked_list[0].traverse() == [1,3]
+    assert initialised_linked_list[0].traverse() == [1, 3]
+
+    # try delete with unexpected input
+    assert initialised_linked_list[0].delete('') is None
+
 
 def test_search(initialised_linked_list):
     assert initialised_linked_list[0].search(1) == 1
