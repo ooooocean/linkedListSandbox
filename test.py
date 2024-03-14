@@ -39,3 +39,7 @@ def test_delete_start(initialised_linked_list):
 def test_delete_end(initialised_linked_list):
     initialised_linked_list[0].delete_end()
     assert initialised_linked_list[0].traverse() == [1,2]
+
+def test_delete(initialised_linked_list):
+    initialised_linked_list[0].delete(initialised_linked_list[1])
+    assert initialised_linked_list[0].traverse() == [1,3]

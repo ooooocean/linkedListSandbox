@@ -59,6 +59,14 @@ class LinkedList:
         # while loop ends once we reach second to last node.
         temp.next = None
 
+    def delete(self, node_to_delete):
+        # traverse to node
+        temp = self.head
+        while not temp.next == node_to_delete:
+            temp = temp.next
+        temp.next = temp.next.next
+
+
 
 if __name__ == '__main__':
     # initialise linked list with some values
