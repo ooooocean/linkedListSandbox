@@ -3,6 +3,7 @@ class Node:
         self.item = item
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -66,6 +67,16 @@ class LinkedList:
             temp = temp.next
         temp.next = temp.next.next
 
+    def search(self, index_to_find):
+        current = self.head
+        count = 0
+        while current:
+            count += 1
+            print(f'count is {count}')
+            if count == index_to_find:
+                return current.item
+            current = current.next
+        return None
 
 
 if __name__ == '__main__':
