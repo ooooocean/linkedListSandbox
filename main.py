@@ -28,6 +28,25 @@ class LinkedList:
         # make this new node the new head
         self.head = new_node
 
+    def insert_end(self, item):
+        # create node for new item
+        new_node = Node(item)
+
+        # traverse to last node and store in memory
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        # once last node located, assign next to be new node
+        temp.next = new_node
+
+    def insert(self, item, prev_node):
+        # create node for new item
+        new_node = Node(item)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
+
 
 if __name__ == '__main__':
     # initialise linked list with some values
